@@ -6,7 +6,7 @@ namespace UniversitetasAPI.Interfaces
     {
         public List<PaskaitaClass> GetPaskaitos();
         public List<PaskaitaClass> GetPaskaitos(int departamentas_id);
-        //public int CreatePaskaita(int paskaita_id, string paskaita_name, int departamentas_id);
-        //public int GetPaskaitaPagalStudentas(int paskaita_id);
+        public int CreatePaskaita(int id, int departamentas_id, string name);
+        public int UpdateDepartamentasWithPaskaitos(int id, int paskaita_id);
     }
 }

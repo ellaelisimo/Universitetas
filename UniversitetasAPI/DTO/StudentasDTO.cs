@@ -1,6 +1,6 @@
 ﻿namespace UniversitetasAPI.DTO
 {
-    public class Studentas
+    public class StudentasDTO
     {
         public int id { get; set; }
         public string firstName { get; set; }

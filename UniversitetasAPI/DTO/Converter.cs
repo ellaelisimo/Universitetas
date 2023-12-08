@@ -12,22 +12,22 @@ namespace UniversitetasAPI.DTO
             _studentasService = studentasService;
             _paskaitaService = paskaitaService;
         }
-        public Departamentas ToDTO(DepartamentasClass department)
+        public DepartamentasDTO ToDTO(DepartamentasClass department)
         {
             var studentai = _studentasService.GetStudentai(department.departamentas_id);
-            //var paskaitos = _paskaitaService.GetPaskaitos(department.departamentas_id);
+            var paskaitos = _paskaitaService.GetPaskaitos(department.departamentas_id);
 
-            return new DTO.Departamentas
+            return new DTO.DepartamentasDTO
             {
                 id = department.departamentas_id,
                 name = department.departamentas_name,
                 studentai = studentai.Select(ToDTO).ToArray(),
-                //paskaitos = paskaitos.Select(ToDTO).ToArray(),
+                paskaitos = paskaitos.Select(ToDTO).ToArray(),
             };
         }
-        public Studentas ToDTO(StudentasClass studentas)
+        public StudentasDTO ToDTO(StudentasClass studentas)
         {
-            return new Studentas
+            return new StudentasDTO
             {
                 id = studentas.studentas_id,
                 firstName = studentas.studentas_name,
@@ -36,9 +36,9 @@ namespace UniversitetasAPI.DTO
                 departamentasId = studentas.departamentas_id,
             };
         }
-        public Paskaita ToDo(PaskaitaClass paskaita)
+        public PaskaitaDTO ToDTO(PaskaitaClass paskaita)
         {
-            return new Paskaita
+            return new PaskaitaDTO
             {
                 id = paskaita.paskaita_id,
                 name = paskaita.paskaita_name,

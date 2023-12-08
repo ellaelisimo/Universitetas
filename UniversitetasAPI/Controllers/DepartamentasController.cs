@@ -22,7 +22,7 @@ namespace UniversitetasAPI.Controllers
         public async Task<IActionResult> GetDepartamentai()
         {
             var departamentai = _departamentasService.GetDepartamentai();
-            var result = new List<DTO.Departamentas>();
+            var result = new List<DTO.DepartamentasDTO>();
             foreach(var department in departamentai)
             {
                 result.Add(_converter.ToDTO(department));
@@ -31,11 +31,16 @@ namespace UniversitetasAPI.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> CreateDepartamentas(int id, string name)
+        public async Task<IActionResult> CreateDepartamentas([FromBody] CreateDepartamentasDTO departamentas)
         {
-            return Ok(_departamentasService.GetDepartamentai());
+
+            if (_departamentasService.CreateDepartamentas(departamentas.Id, departamentas.Name) == 1)
+            {
+                return Ok(_departamentasService.GetDepartamentai());
+            }
+            else
+                return BadRequest("Įveskite teisingą sintaksę");
         }
-        [HttpPut]
         
     }
 }

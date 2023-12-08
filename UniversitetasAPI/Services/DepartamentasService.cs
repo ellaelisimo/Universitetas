@@ -19,10 +19,5 @@ namespace UniversitetasAPI.Services
         {
             return _departamentasRepository.CreateDepartamentas (id, name);
         }
-        public int UpdateDepartamentas(int id, string name)
-        {
-            return _departamentasRepository.UpdateDepartamentas(id, name);
-        }
-
     }
 }

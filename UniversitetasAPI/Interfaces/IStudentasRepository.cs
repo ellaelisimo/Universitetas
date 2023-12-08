@@ -6,7 +6,7 @@ namespace UniversitetasAPI.Interfaces
     {
         public IEnumerable<StudentasClass> GetStudentai();
         public IEnumerable<StudentasClass> GetStudentai(int departamentas_id);
-        //public int CreateStudentas(int studentas_id, string studentas_name, string studentas_lastname, int departamentas_id, int paskaita_id);
-       // public int TransferStudentas(int studentas_id, string studentas_name, string studentas_lastname, int departamentas_id, int paskaita_id);
+        public int UpdateDepartamentasWithStudentai(int id, int student_id);
+        public int GetStudentasWithPaskaitos(int studentas_id);
     }
 }

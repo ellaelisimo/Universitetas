@@ -1,6 +1,6 @@
 ﻿namespace UniversitetasAPI.DTO
 {
-    public class Paskaita
+    public class PaskaitaDTO
     {
         public int id {  get; set; }
         public string name { get; set; }

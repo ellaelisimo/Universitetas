@@ -19,7 +19,6 @@ namespace UniversitetasAPI.Repositories
         }
         public int CreateDepartamentas(int id, string name)
         {
-            //return _connection.Query<DepartamentasClass>("INSERT INTO departamentas VALUES @id, @name");
             string sql = $"INSERT INTO departamentas VALUES (@id, @name)";
             var queryArguments = new
             {
@@ -29,16 +28,6 @@ namespace UniversitetasAPI.Repositories
 
             return _connection.Execute(sql, queryArguments);
         }
-        public int UpdateDepartamentas(int id, int studentas_id)
-        {
-            string sql = $"UPDATE departamentas SET departamentas";
-            var queryArguments = new
-            {
-                id = id,
-                studentas_id = studentas_id
-            };
-            return _connection.Execute(sql, queryArguments );
-        }
-
+        
     }
 }

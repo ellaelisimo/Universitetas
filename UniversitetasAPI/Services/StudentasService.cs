@@ -1,5 +1,6 @@
 ﻿using UniversitetasAPI.Interfaces;
 using UniversitetasAPI.Models;
+using UniversitetasAPI.Repositories;
 
 namespace UniversitetasAPI.Services
 {
@@ -19,6 +20,15 @@ namespace UniversitetasAPI.Services
         {
             return _studentasRepository.GetStudentai(departamentas_id).ToList();
 
+        }
+
+        public int UpdateDepartamentasWithStudentai(int id, int studentas_id)
+        {
+            return _studentasRepository.UpdateDepartamentasWithStudentai(id, studentas_id);
+        }
+        public int GetStudentasWithPaskaitos(int studentas_id)
+        {
+            return _studentasRepository.GetStudentasWithPaskaitos(studentas_id);
         }
     }
 }
